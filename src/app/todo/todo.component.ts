@@ -24,7 +24,8 @@ export class TodoComponent implements OnInit {
   // get maximum id in list and assign maximum id plus one while adding a todo
   onAddTodo(todoText: any) {
     if (this.todoText != "") {
-      console.log("adding text", this.todoText);
+      //console.log("adding text", this.todoText);
+      
       let todoObj = { todoObj: this.todoList.length, text: this.todoText, isCompleted: false, buttonText: "Done" };
       this.todoList.push(todoObj);
       this.todoText = "";
@@ -50,6 +51,6 @@ export class TodoComponent implements OnInit {
   }
   // write logic to method onDeletingTask, to delete the todo
   onDeletingTodo(todoId) {
-    this.todoList.delete(todoId);
+    this.todoList.slice(todoId);
   }
 }
